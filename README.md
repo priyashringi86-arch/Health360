@@ -18,7 +18,7 @@ Exploratory Data Analysis
 ​Dataset
 ​Dataset Name: "smart_healthcare_dataset.csv"
 ​Website Link
-​"View Healthcare Analysis Website" (file:///C:/chapter%201/website/index.html)
+​"View Healthcare Analysis Website" (File:///C:/chapter%201/website/index.html)
 ​Live Tableau Dashboard
 ​"View Healthcare Analysis Dashboard on Tableau Public" (https://public.tableau.com/app/profile/priya.shringi/vizzes)
 ​GitHub Repository
