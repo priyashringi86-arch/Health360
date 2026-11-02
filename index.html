@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Analytics | Priya Shringi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .active-tab {
+            border-bottom: 3px solid #2563eb;
+            color: #2563eb;
+            font-weight: 600;
+        }
+        .story-btn.active {
+            background-color: #2563eb;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 text-white p-2 rounded-lg">
+                    <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-slate-900">HealthCare 360</h1>
+                    <p class="text-xs text-slate-500">Smart Healthcare Analytics & Risk Analysis</p>
+                </div>
+            </div>
+            <nav class="flex gap-6 text-sm font-medium">
+                <button onclick="switchTab('dashboard')" id="nav-dashboard" class="py-2 active-tab transition">Main Dashboard</button>
+                <button onclick="switchTab('story')" id="nav-story" class="py-2 text-slate-600 hover:text-blue-600 transition">Story Walkthrough</button>
+                <button onclick="switchTab('script')" id="nav-script" class="py-2 text-slate-600 hover:text-blue-600 transition">Voice-over Script</button>
+                <button onclick="switchTab('about')" id="nav-about" class="py-2 text-slate-600 hover:text-blue-600 transition">About Project</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- TAB 1: MAIN DASHBOARD -->
+        <section id="tab-dashboard" class="space-y-6">
+            <!-- Student Banner -->
+            <div class="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-2xl p-6 text-white shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <span class="bg-blue-500/30 text-blue-100 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Project Presentation</span>
+                    <h2 class="text-2xl font-bold mt-2">Smart Healthcare Analytics: Patient Health Insights & Risk Factor Analysis</h2>
+                    <p class="text-blue-100 text-sm mt-1">Interactive Tableau Data Visualization & Analytics Dashboard</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl text-xs space-y-1 border border-white/20">
+                    <p><i class="fa-solid fa-user mr-2"></i><strong>Name:</strong> Priya Shringi</p>
+                    <p><i class="fa-solid fa-id-card mr-2"></i><strong>Enrollment:</strong> EN25CA3020119</p>
+                    <p><i class="fa-solid fa-graduation-cap mr-2"></i><strong>Class:</strong> BCA 2nd Year | Medi-Caps University</p>
+                    <p><i class="fa-solid fa-envelope mr-2"></i><strong>Email:</strong> en25ca3020119@medicaps.ac.in</p>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="p-3 bg-blue-100 text-blue-600 rounded-lg"><i class="fa-solid fa-users text-2xl"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-medium">Total Patients Analyzed</p>
+                        <p class="text-2xl font-bold text-slate-800">5,000</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="p-3 bg-amber-100 text-amber-600 rounded-lg"><i class="fa-solid fa-cubes-stacked text-2xl"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-medium">Diabetes Cases</p>
+                        <p class="text-2xl font-bold text-slate-800">1,746</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="p-3 bg-rose-100 text-rose-600 rounded-lg"><i class="fa-solid fa-heart-pulse text-2xl"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-medium">Heart Disease Cases</p>
+                        <p class="text-2xl font-bold text-slate-800">1,499</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="p-3 bg-purple-100 text-purple-600 rounded-lg"><i class="fa-solid fa-brain text-2xl"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-medium">Stroke Cases</p>
+                        <p class="text-2xl font-bold text-slate-800">1,243</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Visual Preview -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-bold text-slate-800 text-lg"><i class="fa-solid fa-chart-line text-blue-600 mr-2"></i>Dashboard Visual Overview</h3>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Tableau Public Embedded View</span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h4 class="text-sm font-semibold text-slate-700 mb-3">Disease Distribution Overview</h4>
+                        <canvas id="diseaseChart" class="max-h-64"></canvas>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h4 class="text-sm font-semibold text-slate-700 mb-3">Demographic Breakdown</h4>
+                        <canvas id="demoChart" class="max-h-64"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tableau Embedded Placeholder -->
+                <div class="mt-6 bg-slate-900 text-white rounded-xl p-8 text-center space-y-3">
+                    <i class="fa-solid fa-desktop text-4xl text-blue-400"></i>
+                    <h4 class="text-lg font-bold">Tableau Interactive Dashboard Workspace</h4>
+                    <p class="text-xs text-slate-400 max-w-xl mx-auto">This dashboard encapsulates 9 core metrics: Gender-wise Cholesterol, BP by Age, Alcohol & Smoking Trends, Exercise Level Distribution, BMI Categories, and Heart Disease Correlations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: STORY WALKTHROUGH -->
+        <section id="tab-story" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="text-xl font-bold text-slate-800 mb-2">Health Care 360 Story Walkthrough</h2>
+                <p class="text-sm text-slate-500 mb-6">Select any story tab below to inspect individual sheets and analytical viewpoints.</p>
+
+                <!-- Story Buttons -->
+                <div class="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-4">
+                    <button onclick="showStory(1)" id="story-btn-1" class="story-btn active text-xs px-4 py-2 rounded-lg border border-slate-200 transition">1. Alcohol & Smoking</button>
+                    <button onclick="showStory(2)" id="story-btn-2" class="story-btn text-xs px-4 py-2 rounded-lg border border-slate-200 transition">2. Avg Blood Pressure</button>
+                    <button onclick="showStory(3)" id="story-btn-3" class="story-btn text-xs px-4 py-2 rounded-lg border border-slate-200 transition">3. Gender Cholesterol</button>
+                    <button onclick="showStory(4)" id="story-btn-4" class="story-btn text-xs px-4 py-2 rounded-lg border border-slate-200 transition">4. Patient Distribution</button>
+                    <button onclick="showStory(5)" id="story-btn-5" class="story-btn text-xs px-4 py-2 rounded-lg border border-slate-200 transition">5. Exercise Levels</button>
+                    <button onclick="showStory(6)" id="story-btn-6" class="story-btn text-xs px-4 py-2 rounded-lg border border-slate-200 transition">6. Heart Disease Distribution</button>
+                    <button onclick="showStory(7)" id="story-btn-7" class="story-btn text-xs px-4 py-2 rounded-lg border border-slate-200 transition">7. Heart Disease by Age</button>
+                    <button onclick="showStory(8)" id="story-btn-8" class="story-btn text-xs px-4 py-2 rounded-lg border border-slate-200 transition">8. BMI vs Heart Disease</button>
+                    <button onclick="showStory(9)" id="story-btn-9" class="story-btn text-xs px-4 py-2 rounded-lg border border-slate-200 transition">9. Avg Cholesterol</button>
+                </div>
+
+                <!-- Story Display Area -->
+                <div id="story-content" class="bg-slate-50 p-6 rounded-xl border border-slate-200 min-h-[300px] flex flex-col justify-center items-center text-center">
+                    <!-- Dynamic content will be injected via Javascript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: VOICE-OVER SCRIPT -->
+        <section id="tab-script" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">Official Presentation Script</h2>
+                        <p class="text-xs text-slate-500">Optimized for screen recording and voice-over demonstration</p>
+                    </div>
+                    <span class="bg-blue-50 text-blue-600 text-xs px-3 py-1.5 rounded-lg font-semibold">Presenter: Priya Shringi</span>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+                        <h3 class="font-bold text-blue-900 text-sm mb-2"><i class="fa-solid fa-microphone text-blue-600 mr-2"></i>Part 1: Introduction & Main Dashboard Overview</h3>
+                        <blockquote class="italic text-slate-700 text-sm leading-relaxed">
+                            "Good morning ma'am and everyone! My name is <strong>Priya Shringi</strong>, enrollment number <strong>EN25CA3020119</strong>, and my email is <strong>en25ca3020119@medicaps.ac.in</strong>. Today, I am presenting my Tableau project titled <strong>'Smart Healthcare Analytics: Patient Health Insights & Risk Factor Analysis'</strong>.<br><br>
+                            The primary objective of this project is to analyze comprehensive patient health data to identify key disease risk factors. This dashboard is built on a dataset of <strong>5,000 patients</strong>. As highlighted in our KPI cards, we evaluated <strong>1,746 cases of Diabetes</strong>, <strong>1,499 cases of Heart Disease</strong>, and <strong>1,243 cases of Stroke</strong>. Overall, this interactive dashboard provides detailed insights into critical health metrics like cholesterol levels, blood pressure distribution, physical activity, and BMI categories."
+                        </blockquote>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-slate-800 text-sm mb-2"><i class="fa-solid fa-film text-slate-600 mr-2"></i>Part 2: Health Care 360 Story Walkthrough (Sheet by Sheet)</h3>
+                        <ul class="space-y-3 text-xs text-slate-700">
+                            <li class="p-2 bg-white rounded border border-slate-200"><strong>1. Alcohol & Smoking:</strong> "Moving to our Health Care 360 Story, our first point compares alcohol and smoking consumption trends across different age groups using a grouped bar chart."</li>
+                            <li class="p-2 bg-white rounded border border-slate-200"><strong>2. Avg Blood Pressure:</strong> "Next, this line chart illustrates how average blood pressure fluctuates across various age groups, from teenagers to elderly patients."</li>
+                            <li class="p-2 bg-white rounded border border-slate-200"><strong>3. Gender-wise Cholesterol:</strong> "Here, we analyze the distribution of cholesterol levels categorized by gender and respective age groups."</li>
+                            <li class="p-2 bg-white rounded border border-slate-200"><strong>4. Patient Distribution:</strong> "This pie chart highlights the demographic distribution of our patients across Teenagers, Young Adults, Adults, Middle-aged, and Elderly categories."</li>
+                            <li class="p-2 bg-white rounded border border-slate-200"><strong>5. Exercise Levels:</strong> "In this tab, we explore physical activity levels and exercise routines corresponding to each age bracket."</li>
+                            <li class="p-2 bg-white rounded border border-slate-200"><strong>6. Heart Disease Distribution:</strong> "Here, we highlight which age groups experience a higher volume of heart disease cases."</li>
+                            <li class="p-2 bg-white rounded border border-slate-200"><strong>7. Heart Disease by Age:</strong> "This bar graph plots the average heart disease rates mapped directly against age groups."</li>
+                            <li class="p-2 bg-white rounded border border-slate-200"><strong>8. BMI Category vs Heart Disease:</strong> "In this visualization, we examine how different Body Mass Index categories—such as normal, overweight, or obese—correlate with heart disease risk."</li>
+                            <li class="p-2 bg-white rounded border border-slate-200"><strong>9. Avg Cholesterol by Age:</strong> "And finally, this bar chart showcases the average cholesterol levels evaluated across all age groups. Together, this dashboard and story provide a comprehensive 360-degree analytical view of healthcare risk factors. Thank you so much for your time and attention!"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: ABOUT PROJECT -->
+        <section id="tab-about" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <h2 class="text-xl font-bold text-slate-800">About The Project & Technical Stack</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+                        <i class="fa-solid fa-database text-blue-600 text-2xl mb-2"></i>
+                        <h3 class="font-bold text-slate-800 text-sm">Dataset Scope</h3>
+                        <p class="text-xs text-slate-600">Comprises 5,000 unique patient clinical records mapping demographics, vital signs, physical parameters, and chronic disease outcomes.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+                        <i class="fa-solid fa-chart-simple text-indigo-600 text-2xl mb-2"></i>
+                        <h3 class="font-bold text-slate-800 text-sm">Analytics Engine</h3>
+                        <p class="text-xs text-slate-600">Built using Tableau Desktop / Tableau Public using custom calculated fields, KPI containers, line graphs, bar charts, and pie charts.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+                        <i class="fa-solid fa-globe text-emerald-600 text-2xl mb-2"></i>
+                        <h3 class="font-bold text-slate-800 text-sm">Web Integration</h3>
+                        <p class="text-xs text-slate-600">Responsive single-page web architecture for embedding visual dashboards, presentation scripts, and documentation.</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 pt-6">
+                    <h3 class="font-bold text-slate-800 text-sm mb-3">Academic Submission Info</h3>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs space-y-2">
+                        <p><strong>Institution:</strong> Medi-Caps University, Indore</p>
+                        <p><strong>Department:</strong> Computer Applications (CA)</p>
+                        <p><strong>Student Name:</strong> Priya Shringi</p>
+                        <p><strong>Enrollment Number:</strong> EN25CA3020119</p>
+                        <p><strong>Email:</strong> en25ca3020119@medicaps.ac.in</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p>© 2026 Priya Shringi | Medi-Caps University</p>
+            <p>Project: Healthcare Analytics: Patient Health Insights & Risk Factor Analysis</p>
+        </div>
+    </footer>
+
+    <!-- Script Logic -->
+    <script>
+        // Tab Switcher
+        function switchTab(tabId) {
+            ['dashboard', 'story', 'script', 'about'].forEach(id => {
+                document.getElementById('tab-' + id).classList.add('hidden');
+                document.getElementById('nav-' + id).classList.remove('active-tab');
+                document.getElementById('nav-' + id).classList.add('text-slate-600');
+            });
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            document.getElementById('nav-' + tabId).classList.add('active-tab');
+            document.getElementById('nav-' + tabId).classList.remove('text-slate-600');
+        }
+
+        // Story Details Data
+        const storyData = {
+            1: { title: "1. Alcohol and Smoking Consumption", desc: "Compares alcohol and smoking consumption trends across different age groups using a grouped bar chart.", icon: "fa-beer-mug-empty" },
+            2: { title: "2. Average Blood Pressure by Age", desc: "Illustrates how average blood pressure fluctuates across age brackets, from teenagers to elderly patients.", icon: "fa-heart-pulse" },
+            3: { title: "3. Gender-wise Cholesterol Analysis", desc: "Analyzes the distribution of cholesterol levels categorized by gender and respective age groups.", icon: "fa-venus-mars" },
+            4: { title: "4. Patient Demographic Distribution", desc: "Pie chart highlighting patient demographic breakdown across Teenagers, Young Adults, Adults, Middle-aged, and Elderly categories.", icon: "fa-chart-pie" },
+            5: { title: "5. Exercise Level Distribution", desc: "Explores physical activity levels and exercise routines corresponding to each age bracket.", icon: "fa-person-running" },
+            6: { title: "6. Heart Disease Distribution", desc: "Highlights age groups experiencing a higher concentration of heart disease cases.", icon: "fa-notes-medical" },
+            7: { title: "7. Average Heart Disease by Age", desc: "Plots average heart disease rates mapped directly against specific age brackets.", icon: "fa-chart-column" },
+            8: { title: "8. BMI Category vs Heart Disease", desc: "Examines how different Body Mass Index categories (normal, overweight, obese) correlate with heart disease risk.", icon: "fa-weight-scale" },
+            9: { title: "9. Average Cholesterol by Age", desc: "Showcases overall average cholesterol levels evaluated across all age groups.", icon: "fa-square-poll-vertical" }
+        };
+
+        function showStory(num) {
+            for(let i=1; i<=9; i++) {
+                document.getElementById(`story-btn-${i}`).classList.remove('active');
+            }
+            document.getElementById(`story-btn-${num}`).classList.add('active');
+            
+            const data = storyData[num];
+            document.getElementById('story-content').innerHTML = `
+                <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-3"><i class="fa-solid ${data.icon} text-3xl"></i></div>
+                <h3 class="text-lg font-bold text-slate-800 mb-2">${data.title}</h3>
+                <p class="text-sm text-slate-600 max-w-lg mb-4">${data.desc}</p>
+                <div class="bg-white px-4 py-2 rounded-lg border border-slate-200 text-xs text-slate-500 italic">"Voice-over Script Point #${num}"</div>
+            `;
+        }
+
+        // Initialize First Story Tab & Charts
+        window.onload = function() {
+            showStory(1);
+
+            // Render Preview Charts
+            const ctx1 = document.getElementById('diseaseChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Diabetes (1,746)', 'Heart Disease (1,499)', 'Stroke (1,243)'],
+                    datasets: [{
+                        data: [1746, 1499, 1243],
+                        backgroundColor: ['#f59e0b', '#f43f5e', '#a855f7']
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+
+            const ctx2 = document.getElementById('demoChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['Teenager', 'Young Adult', 'Adult', 'Middle Age', 'Old'],
+                    datasets: [{
+                        label: 'Patient Count',
+                        data: [650, 1100, 1400, 1050, 800],
+                        backgroundColor: '#2563eb'
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        };
+    </script>
+</body>
+</html>
